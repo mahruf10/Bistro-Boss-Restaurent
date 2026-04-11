@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MenuItems = ({items})=>{
-    console.log(items);
+    // console.log(items);
     const {name,image,price,recipe}=items
     return (
        

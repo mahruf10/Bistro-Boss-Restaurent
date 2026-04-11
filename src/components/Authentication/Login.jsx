@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import { AuthContext } from './AuthProvider';
 import { Link, useLocation,useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+// import backgroundImg from '../../assets/others/authentication.png'
+import SocialAuthentication from './SocialAuthentication';
 const Login = () => {
   const {signIn}=useContext(AuthContext)
   const location=useLocation()
@@ -14,7 +16,7 @@ const Login = () => {
    const from = location.state?.from?.pathname || "/"
   const {register,handleSubmit,reset,formState: { errors }}=useForm()
   const onSubmit=data=>{
-    console.log(data)
+ 
     signIn(data.email,data.password)
     .then(result=>{
         Swal.fire({
@@ -30,11 +32,12 @@ const Login = () => {
       Swal.fire({
   icon: "error",
   title: "Oops...",
-  text: `Something went wrong!.${error.message}`
+  text: `Something went wrong!.Maybe Your email or password was wrong.`
 });
     })
   }
      const captcharef=useRef(null)
+     //here disable has to true
      const [disabled,setDisabled]=useState(true)
   useEffect(()=>{
  loadCaptchaEnginge(6);
@@ -57,7 +60,9 @@ const Login = () => {
        
             <div className="hero min-h-screen">
               
-  <div className="hero-content flex-col lg:flex-row-reverse gap-10">
+  <div className="hero-content flex-col lg:flex-row-reverse gap-10 "
+  // style={{backgroundImage:`url(${backgroundImg})`}}
+  >
    
     <div className=" lg:text-left">
     <img className='w-100'  src={loginImg} alt="" />
@@ -78,9 +83,11 @@ const Login = () => {
         
           <input type="text" name='captcha' className="input" ref={captcharef} placeholder="Type the valid captcha above" />
           <button type='button' onClick={handlecaptcha}  className='btn btn-outline btn-xs mt-2 uppercase'>Check</button>
-          <button disabled={disabled} className="btn btn-neutral mt-4">Login</button>
+          <button disabled={disabled} className="btn btn-neutral  mt-4">Login</button>
           <p className='mx-auto'>Here You new? <Link className='underline' to={'/register'}>SignUp</Link></p>
         </fieldset>
+         <div className='divider'></div>
+         <SocialAuthentication></SocialAuthentication>
       </form>
     </div>
   </div>

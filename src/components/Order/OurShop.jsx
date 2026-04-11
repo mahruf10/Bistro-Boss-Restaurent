@@ -8,8 +8,8 @@ import OrderCard from "./OrderCard";
 import FoodCard from "./FoodCard";
 const OurShop=()=>{
   const [index,setIndex]=useState(0)
-  const {menu,loading}=useMenu()
-    if(loading){
+  const [menu,isLoading,,]=useMenu()
+    if(isLoading){
         <h1 className="text-4xl text-center">Please wait..</h1>
     }
     const derssertItems=menu.filter(items=>items.category=='dessert')

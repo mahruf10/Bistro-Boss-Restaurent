@@ -4,8 +4,9 @@ import { AuthContext } from '../../Authentication/AuthProvider';
 import { FaCartShopping } from "react-icons/fa6";
 import Swal from 'sweetalert2';
 import useCart from './useCart';
+import useAdmin from './useAdmin';
 const NavBar = () => {
-
+  const [isAdmin]=useAdmin()
   const {user,logOut,loading}=useContext(AuthContext)
   const [cart]=useCart()
   const handleaddtocart=()=>{
@@ -29,15 +30,22 @@ const NavBar = () => {
   <li><Link to={'/'}>Home</Link></li>
   <li><Link to={'/ourmenu'}>Our Menu</Link></li>
   <li><Link to={'/ourshop'}>Our Shop</Link></li>
-  <li><Link to={'/secret'}>Secret</Link></li>
-  <li>
-    <Link to={'/dashboad/cart'}>
+  {
+    !isAdmin ? <li><Link to={'/dashboad'}>Dashboard</Link></li>: ''
+  }
+  
+
+   {
+      isAdmin ? <> <li><Link to={'/dashboad'}>Dashboard</Link></li> </> : 
+      <>  <li>
+    <Link to={'/cart'}>
      <button onClick={()=>handleaddtocart()} className="justify-center flex items-center">
   <FaCartShopping /> <div className="badge badge-sm badge-secondary">{cart.length}</div>
 </button>
     </Link>
-   </li>
-  
+   </li> </>
+  }
+
    {
      user ?
      <><li><button className='justify-center ' onClick={handlelogout}>Logout</button></li>

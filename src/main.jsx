@@ -22,6 +22,17 @@ import Secret from './components/Secret/Secret.jsx';
 import SecretRouter from './components/Secret/SecretRouter.jsx';
 import Dashboad from './components/Home/Dashboard/Dashboad';
 import Cart from './components/Order/Cart.jsx';
+import Users from './components/Home/Dashboard/AdminControl/Users.jsx';
+import AddItems from './components/Home/Dashboard/AdminControl/AddItems.jsx';
+import AdminRoute from './components/Secret/AdminRoute.jsx';
+import ManageItem from './components/Home/Dashboard/AdminControl/ManageItem.jsx';
+import EditItem from './components/Home/Dashboard/AdminControl/EditItem.jsx';
+import Payment from './components/Order/Payment.jsx';
+import PaymentHistory from './components/Home/Dashboard/UserControl/PaymentHistory';
+import AdminHome from './components/Home/Dashboard/AdminControl/AdminHome.jsx';
+import UserHome from './components/Home/Dashboard/UserControl/UserHome.jsx';
+import AddReview from './components/Home/Dashboard/UserControl/AddReview.jsx';
+import Reservation from './components/Home/Dashboard/UserControl/Reservation.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,21 +60,55 @@ const router = createBrowserRouter([
     element:<SignUp></SignUp>
   },
   {
-    path:'/secret',
-    element:<SecretRouter>  <Secret></Secret> </SecretRouter>
-  },{
     path:'/dashboad',
-    element:<Dashboad></Dashboad>,
+    element:<SecretRouter> <Dashboad></Dashboad> </SecretRouter>
+  },
+    {
+        path:'cart',
+        element:<Cart></Cart>
+      },
+  {
+    path:'/dashboad',
+    element:<SecretRouter><Dashboad></Dashboad></SecretRouter>,
     children:[
       {
         path:'cart',
         element:<Cart></Cart>
       },
-      // {
-      //   path:'home',
-      //  element:<Home></Home>
-      // }
-
+    {
+    path:'payment',
+    element:<Payment></Payment>
+      },{
+        path:'paymentHistory',
+        element:<PaymentHistory></PaymentHistory>
+      },{
+    path:'userHome',
+    element:<UserHome></UserHome>
+      },{
+        path:'reviews',
+        element:<AddReview></AddReview>
+      },{
+        path:'reservation',
+        element:<Reservation></Reservation>
+      },
+      // admin Route
+      {
+        path:'adminHome',
+        element:<AdminRoute> <AdminHome></AdminHome></AdminRoute> 
+      },
+      {
+        path:'alluser',
+        element: <AdminRoute> <Users></Users></AdminRoute>
+      },{
+        path:"additems",
+        element:<AdminRoute><AddItems></AddItems> </AdminRoute>
+      },{
+        path:'manageitems',
+        element:<AdminRoute> <ManageItem></ManageItem> </AdminRoute>
+      },{
+        path:'editItem/:id',
+        element:<EditItem></EditItem>
+      }
     ]
   }
 ]);

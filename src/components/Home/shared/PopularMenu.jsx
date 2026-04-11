@@ -16,9 +16,9 @@ const PopularMenu = () => {
 //           .catch(error=>console.log(error.message))
 //   },[])
 
-const {menu,loading}=useMenu()
+const [menu,isLoading,refetch]=useMenu()
 
-if(loading){
+if(isLoading){
 <h1 className='text-3xl text-center'>Please Wait....</h1>
 }
 const popularItems=menu.filter(items=>items.category=='popular')

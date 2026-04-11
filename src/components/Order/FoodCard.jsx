@@ -32,7 +32,7 @@ const FoodCard = ({item}) => {
     price: order.price
 
   }
-    console.log(order);
+    // console.log(order);
     if(user && user?.email){
       Authaxios.post('/carts',cartItems)
       .then(res=>{

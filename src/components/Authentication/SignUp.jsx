@@ -5,15 +5,23 @@ import { AuthContext } from './AuthProvider';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialAuthentication from './SocialAuthentication';
+
+import useAxiosPublic from '../Home/shared/useAxiosPublic';
 const SignUp = () => {
-      
+      const axiosPublic=useAxiosPublic() 
     const {signUp,updateUserProfile}=useContext(AuthContext)
     const {register,handleSubmit,reset,formState: { errors }}=useForm()
     const onSubmit=data=>{
-    console.log(data)
+    // console.log(data)
     signUp(data.email,data.password)
     .then(result=>{
-      console.log(result)
+        const userInfo={
+            name:data.name,
+            email:data.email,
+            image:data.photo
+        }
+      axiosPublic.post('/users',userInfo)
      Swal.fire({
   title: "SignUp successfully done!",
   icon: "success",
@@ -21,7 +29,7 @@ const SignUp = () => {
 });
       updateUserProfile(data.name,data.photo)
       .then(()=>{
-        console.log('user updated');
+       
          reset()
       })
       .catch(error=>console.log(error.message))
@@ -60,7 +68,10 @@ const SignUp = () => {
                                 <button className="btn btn-neutral mt-4">SignUp</button>
                                 <p>Already Have an account? <Link className='underline' to={'/login'}>Sign In</Link></p>
                             </fieldset>
+                         <div className='divider'></div>
+                            <SocialAuthentication></SocialAuthentication>
                         </form>
+                         
                     </div>
                 </div>
             </div>

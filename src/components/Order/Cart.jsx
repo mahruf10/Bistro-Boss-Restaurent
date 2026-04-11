@@ -4,6 +4,8 @@ import { AuthContext } from '../Authentication/AuthProvider';
 import { FaBox,FaTrash } from 'react-icons/fa6';
 import useAxiosSecure from '../Home/shared/useAxiosSecure';
 import Swal from 'sweetalert2';
+import SectionTitle from '../Home/Section/SectionTitle';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const [cart,refetch]=useCart()
@@ -41,16 +43,21 @@ const Cart = () => {
   
 });
       
-
+// console.log(cart)
     }
     return (
         <div>
+            <SectionTitle heading='my cart' subheading={'try this'}></SectionTitle>
             <div className='flex justify-between p-10'>
                 <h2 className='text-3xl'>My Order:{cart.length}</h2>
                 <h2 className='text-3xl'>Total Price: ${totalprice}</h2>
-                <button className='btn bg-[#D1A054]'>
+                {
+                    cart.length ? <Link to='/dashboad/payment'> <button className='btn bg-[#D1A054]'>
                     Pay
-                </button>
+                </button> </Link> 
+                : ''
+                }
+               
             </div>
             <div className='p-3'>
                 <div className="overflow-x-auto rounded-box  border border-base-content/5 bg-base-100">
@@ -73,7 +80,7 @@ const Cart = () => {
         <td><div  className="mask  h-12 w-12"><img className='rounded-xl' src={carts.image} alt="" /></div></td>
         <td>{carts.name}</td>
         <td>${carts.price}</td>
-        <td><FaTrash onClick={()=>handleDelete(carts._id)} className='text-red-500'></FaTrash></td>
+        <td> <button onClick={()=>handleDelete(carts._id)} className='text-red-500 btn btn-ghost'> <FaTrash ></FaTrash> </button></td>
       </tr>
             ))
         }

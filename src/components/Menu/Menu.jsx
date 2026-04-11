@@ -11,8 +11,8 @@ import saladImg from '../../assets/menu/salad-bg.jpg'
 import soupImg from '../../assets/menu/soup-bg.jpg'
 import OrderCard from '../Order/OrderCard';
 const Menu = () => {
-    const {menu,loading}=useMenu()
-    if(loading){
+    const [menu,isLoading,refetch]=useMenu()
+    if(isLoading){
         <h1 className='text-3xl text-center'>Please wait...</h1>
     }
     const offerdItems=menu.filter(items=>items.category=='offered')
