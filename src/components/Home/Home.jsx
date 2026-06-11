@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet-async';
 import Img from '../../assets/home/chef-service.jpg'
 const Home = () => {
     return (
-        <div>
+        <div className='p-3'>
             <Helmet>
                 <title>Bistro|Home</title>
 
