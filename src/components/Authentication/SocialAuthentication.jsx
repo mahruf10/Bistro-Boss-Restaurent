@@ -29,7 +29,7 @@ const SocialAuthentication = () => {
     })
     }
     return (
-        <div className='ml-10 flex items-center gap-2'>
+        <div className='ml-5 md:ml-8 flex items-center gap-2'>
             <FaGoogle></FaGoogle>
             <button onClick={handlesign} className='btn'>SignWith Google</button>
         </div>

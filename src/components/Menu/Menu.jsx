@@ -22,7 +22,7 @@ const Menu = () => {
     const soupItems=menu.filter(items=>items.category=='soup')
     return (
         
-        <div>
+        <div className='p-3'>
 
              <Helmet>
         <title>Bistro| Menu</title>
