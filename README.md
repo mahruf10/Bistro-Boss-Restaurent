@@ -47,5 +47,5 @@ npm run dev
 ##  Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/mahruf10)
-- LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
+- GitHub: [@mahruf10](https://github.com/mahruf10)
+- LinkedIn: [mahruf](https://linkedin.com/in/your-linkedin)
