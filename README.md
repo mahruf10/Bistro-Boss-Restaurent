@@ -10,7 +10,7 @@ https://bistro-boss-ab033.web.app
 
 ---
 
-## ✨ Features
+##  Features
 
 ###  Customer
 - Browse full menu by category
