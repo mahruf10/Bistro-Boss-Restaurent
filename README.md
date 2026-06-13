@@ -1,16 +1,51 @@
-# React + Vite
+# 🍽️ Bistro Boss — Restaurant Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bistro Boss is a comprehensive restaurant management website built using the MERN stack (MongoDB, Express.js, React with Vite, and Node.js). This application aims to streamline restaurant operations, providing an intuitive interface for managing reservations, orders, menus, and staff.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Live Demo
 
-## React Compiler
+https://bistro-boss-ab033.web.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+###  Customer
+- Browse full menu by category
+- Add items to cart
+- Secure online payment (Stripe)
+- View order history from user dashboard
+
+###  Auth & Security
+- Email/Password + Google Sign-In (Firebase)
+- JWT stored in HTTP-only cookies
+- Protected routes for both user and admin
+
+###  Admin Dashboard
+- Add / update / delete menu items
+- View and manage all orders
+- Manage users & assign admin role
+- Sales overview stats
+
+---
+
+
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/your-username/bistro-boss.git
+cd bistro-boss
+npm install
+npm run dev
+```
+
+---
+
+##  Author
+
+**Your Name**
+- GitHub: [@your-username](https://github.com/your-username)
+- LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
