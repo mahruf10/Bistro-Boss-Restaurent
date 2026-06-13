@@ -33,10 +33,10 @@ https://bistro-boss-ab033.web.app
 
 
 
-## 🚀 Getting Started
+##  Getting Started
 
 ```bash
-git clone https://github.com/your-username/bistro-boss.git
+git clone https://github.com/mahruf10/bistro-boss.git
 cd bistro-boss
 npm install
 npm run dev
@@ -47,5 +47,5 @@ npm run dev
 ##  Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [@your-username](https://github.com/mahruf10)
 - LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
