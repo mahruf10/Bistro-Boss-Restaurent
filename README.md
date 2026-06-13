@@ -46,6 +46,6 @@ npm run dev
 
 ##  Author
 
-**Your Name**
+**MAHRUF**
 - GitHub: [@mahruf10](https://github.com/mahruf10)
 - LinkedIn: [mahruf](https://linkedin.com/in/your-linkedin)
